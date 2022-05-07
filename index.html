@@ -13,14 +13,13 @@
   <script type="text/javascript">
          console.log(window.location);
          if (!window.location.search) {
-           window.location.href = "https://github.com/permanentstar";
+           window.location.href = "https://github.com/permanentstar/" + window.location.hash;
          } else {
            var t = window.location.search.substring(1);
-           console.log(t);
            var tp = t.split("&");
            var kv = null;
+           var sub = null;
            for(var i=0;i<tp.length;i++) {
-             console.log(tp[i]);
              kv = tp[i].split("=");
              if (kv[0]="repo") {  //命中repo 直接跳转仓库
                window.location.href = "https://github.com/permanentstar/" + kv[1];
